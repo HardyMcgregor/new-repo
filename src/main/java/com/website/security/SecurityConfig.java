@@ -28,10 +28,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            .antMatchers("/").hasAnyRole("USER", "ADMIN") // Cho phép cả USER và ADMIN truy cập trang chủ
-            .and().formLogin().loginPage("/login") // Chỉ định trang đăng nhập
-            .and().logout().logoutSuccessUrl("/").permitAll() // Chỉ định URL logout và cho phép tất cả người dùng truy cập
-            .and().exceptionHandling().accessDeniedPage("/403"); // Xử lý trang lỗi 403
+            .antMatchers("/").hasAnyRole("USER", "ADMIN") 
+            .and().formLogin().loginPage("/login") 
+            .and().logout().logoutSuccessUrl("/").permitAll() 
+            .and().exceptionHandling().accessDeniedPage("/403"); 
 
         http.csrf().disable(); // Vô hiệu hóa CSRF cho đơn giản hóa mục đích ví dụ
     }
