@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and().logout().logoutSuccessUrl("/").permitAll() 
             .and().exceptionHandling().accessDeniedPage("/403"); 
 
-        http.csrf().disable(); // Vô hiệu hóa CSRF cho đơn giản hóa mục đích ví dụ
+        http.csrf().disable(); 
     }
 
     @Bean
